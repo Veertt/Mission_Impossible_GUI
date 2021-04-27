@@ -41,19 +41,6 @@ Rezultat_Ruchu CAgent::Ruch(CMapa* mapa)
 {
     auto aktualny_czas = system_clock::now();
 
-    for(int i = Get_koordynaty().R-1; i<=Get_koordynaty().R+1; i++)
-    {
-       for(int j = Get_koordynaty().K-1; j<=Get_koordynaty().K+1; j++)
-       {
-            CObiekt* pom = mapa->Get_co_jest_na_mapie(i,j);
-
-            if(pom!=NULL&&pom->czy_mozna_mnie_sledzic()==true)
-            {
-                return Przegrana;
-            }
-        }
-   }
-
     if( aktualny_czas > czas )
     {
         zarzadca.Sprawdzajaca_czy_wiemy_gdzie_jest_gracz(mapa, wielkosc_obszaru_poszukiwan, Get_koordynaty(),orientacja,w_ktora_strone, ktory_agent);

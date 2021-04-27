@@ -178,7 +178,7 @@ void CGra::Ustawienie_obiektow()
 
                 SKoordynaty_obiektu koordynaty_obiektu_w_obiekcie = pom->Get_koordynaty();
                 CObiekt* pom2 = map.Get_co_jest_na_mapie(koordynaty_obiektu_w_obiekcie.R, koordynaty_obiektu_w_obiekcie.K);
-                if(pom2 == NULL && (koordynaty_obiektu_w_obiekcie.R!=i||koordynaty_obiektu_w_obiekcie.K!=j))
+                if((pom2 == NULL || pom2->czy_mozna_we_mnie_wejsc()) && (koordynaty_obiektu_w_obiekcie.R!=i||koordynaty_obiektu_w_obiekcie.K!=j))
                 {
                     map.Set_na_mape(koordynaty_obiektu_w_obiekcie,pom);
                     map.Set_na_mape(koordynaty_obiektu_na_mapie,NULL);
