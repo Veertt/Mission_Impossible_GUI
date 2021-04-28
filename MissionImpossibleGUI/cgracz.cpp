@@ -25,40 +25,28 @@ bool CGracz::czy_mozna_we_mnie_wejsc()
     return false;
 }
 
-void CGracz::keyPressEvent(QKeyEvent *event)
-{
-    if(event->key() == Qt::Key_W)
-    {
-        qDebug("Tak");
-    }
-}
-
-Rezultat_Ruchu CGracz::Ruch(CMapa *mapa)
+Rezultat_Ruchu CGracz::Ruch(CMapa *mapa, int sterowanie)
 {
     SKoordynaty_obiektu aktualne = Get_koordynaty();
 
-    if(kbhit())
+    switch(sterowanie)
     {
-        sterowanie = getch();
+        case 87:
+            aktualne.R--;
+            break;
 
-        switch(sterowanie)
-        {
-            case 119:
-                aktualne.R--;
-                break;
+        case 83:
+            aktualne.R++;
+            break;
 
-            case 115:
-                aktualne.R++;
-                break;
+        case 68:
+            aktualne.K++;
+            break;
 
-            case 100:
-                aktualne.K++;
-                break;
+        case 65:
+            aktualne.K--;
+            break;
 
-            case 97:
-                aktualne.K--;
-                break;
-        }
     }
 
     CObiekt *pom = mapa->Get_co_jest_na_mapie(aktualne.R,aktualne.K);

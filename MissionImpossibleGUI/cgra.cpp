@@ -1,5 +1,6 @@
 #include "cgra.h"
 #include <QPainter>
+#include <QDebug>
 
 CGra::CGra()
 {
@@ -8,6 +9,8 @@ CGra::CGra()
 
     //bool czy_gramy  = Wstep();
     poziom_trudnosci = 0;
+
+    do_sterowania = 0;
 
     //if(czy_gramy == true)
     {
@@ -130,13 +133,20 @@ void CGra::Przedstawienie_zasad_gry(int &wybor)
 
 }
 
-void CGra::Wyswietl_aktualna(QPainter& painter)
+void CGra::Wyswietl_aktualna(QPainter &painter)
 {
     map.Wyswietl(painter);
 }
 
+void CGra::Do_sterowania_dla_gracza(int &control)
+{
+    do_sterowania = control;
+}
+
 void CGra::Ruch_obiektow()
 {
+    Do_sterowania_dla_gracza(do_sterowania);
+
     for(int i = 0;i<map.Get_liczba_Wierszy();i++)
     {
         for(int j = 0;j<map.Get_liczba_Kolumn();j++)
@@ -145,7 +155,7 @@ void CGra::Ruch_obiektow()
 
             if(pom!=NULL)
             {
-                Rezultat_Ruchu rezultat_aktualny = pom->Ruch(&map);
+                Rezultat_Ruchu rezultat_aktualny = pom->Ruch(&map,do_sterowania);
 
                 if(rezultat_aktualny==Przegrana)
                 {
@@ -160,6 +170,8 @@ void CGra::Ruch_obiektow()
             }
         }
     }
+
+   do_sterowania = 0;
 }
 
 void CGra::Ustawienie_obiektow()

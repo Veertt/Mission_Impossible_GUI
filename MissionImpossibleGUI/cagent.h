@@ -20,7 +20,7 @@ private:
 public:
     CAgent(int x, int y, bool orientation, int krok_agenta);
 
-    virtual Rezultat_Ruchu Ruch(CMapa* mapa);
+    virtual Rezultat_Ruchu Ruch(CMapa *mapa,int sterowanie);
     virtual void Wyswietl(QPainter& painter);
     virtual bool czy_mozna_za_pomoca_mnie_przegrac();
     virtual bool czy_mozna_we_mnie_wejsc();

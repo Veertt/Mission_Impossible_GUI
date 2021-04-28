@@ -1,6 +1,5 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
 #include <QMainWindow>
 #include <QTimer>
 #include "cgra.h"
@@ -16,7 +15,8 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    virtual void paintEvent(QPaintEvent * e);
+    virtual void paintEvent(QPaintEvent *e);
+    virtual void keyPressEvent(QKeyEvent *e);
     
 private:
     Ui::MainWindow *ui;

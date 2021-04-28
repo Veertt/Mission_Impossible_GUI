@@ -37,7 +37,7 @@ bool CAgent::czy_mozna_we_mnie_wejsc()
     return false;
 }
 
-Rezultat_Ruchu CAgent::Ruch(CMapa* mapa)
+Rezultat_Ruchu CAgent::Ruch(CMapa* mapa, int sterowanie)
 {
     auto aktualny_czas = system_clock::now();
 

@@ -20,6 +20,7 @@ private:
     SCzy_koniec koniec;
     int poziom_trudnosci;
     CMapa map;
+    int do_sterowania;
 
     bool Wstep();
     void Przedstawienie_zasad_gry(int &wybor);
@@ -30,7 +31,8 @@ private:
 public:
     CGra();
     SCzy_koniec Kolejna_klatka();
-    void Wyswietl_aktualna(QPainter& painter);
+    void Wyswietl_aktualna(QPainter &painter);
+    void Do_sterowania_dla_gracza(int &control);
 };
 
 //funkcja służaca do odświeżania

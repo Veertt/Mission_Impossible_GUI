@@ -26,7 +26,7 @@ public:
     SKoordynaty_obiektu Get_koordynaty();
     void Set_koordynaty(SKoordynaty_obiektu wspolrzedne);
 
-    virtual Rezultat_Ruchu Ruch(CMapa* mapa)=0;
+    virtual Rezultat_Ruchu Ruch(CMapa* mapa, int sterowanie) = 0;
     virtual void Wyswietl(QPainter& painter)=0;
     virtual bool czy_za_pomoca_mnie_mozna_wygrac();
     virtual bool czy_mozna_we_mnie_wejsc();
