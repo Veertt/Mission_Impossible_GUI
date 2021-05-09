@@ -37,7 +37,7 @@ bool CAgent::czy_mozna_we_mnie_wejsc()
     return false;
 }
 
-Rezultat_Ruchu CAgent::Ruch(CMapa* mapa, int sterowanie)
+Rezultat_Ruchu CAgent::Ruch(CMapa* mapa)
 {
     auto aktualny_czas = system_clock::now();
 
@@ -84,12 +84,20 @@ Rezultat_Ruchu CAgent::Ruch(CMapa* mapa, int sterowanie)
 
                 if(pom!=NULL&&pom->czy_mozna_mnie_sledzic()==true)
                 {
+                    zarzadca.czy_wiemy_gdzie_jest_gracz = false;
+                    zarzadca.wspolrzedne_gracza = {INT_MAX, INT_MAX};
                     return Przegrana;
                 }
             }
        }
 
         czas = czas + krok;
+
+        if(aktualne.R==zarzadca.wspolrzedne_gracza.R&&aktualne.K==zarzadca.wspolrzedne_gracza.K) // to jest rozwiązanie problemu
+        {
+            zarzadca.czy_wiemy_gdzie_jest_gracz = false;
+            zarzadca.wspolrzedne_gracza = {INT_MAX, INT_MAX};
+        }
     }
 
     return Nic;

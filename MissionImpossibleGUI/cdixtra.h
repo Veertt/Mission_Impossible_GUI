@@ -1,6 +1,7 @@
 #ifndef CDIXTRA_H
 #define CDIXTRA_H
-#include "cobiekt.h"
+
+#include "SKoordynaty.h"
 
 struct Do_Dixtra
 {
@@ -28,7 +29,6 @@ public:
     void Ustawiajaca_tablice();
 
     SKoordynaty_obiektu Get_tablica_poprzednik(SKoordynaty_obiektu obecne);
-    void Wyswietl_tablice();//niepotrzebne
 
     ~CDixtra();
 

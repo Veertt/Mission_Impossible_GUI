@@ -12,8 +12,10 @@ TARGET = MissionImpossibleGraphical
 TEMPLATE = app
 CONFIG += c++11
 
-SOURCES += main.cpp\
-        mainwindow.cpp \
+SOURCES += \
+    mainwindow.cpp \
+    main.cpp \
+    help.cpp \
     czarzadca_agentow.cpp \
     csciana.cpp \
     cobiekt.cpp \
@@ -22,9 +24,12 @@ SOURCES += main.cpp\
     cgracz.cpp \
     cgra.cpp \
     cdixtra.cpp \
-    cagent.cpp
+    cagent.cpp \
+    wstep.cpp
 
-HEADERS  += mainwindow.h \
+HEADERS  += \
+    mainwindow.h \
+    help.h \
     czarzadca_agentow.h \
     csciana.h \
     cobiekt.h \
@@ -34,7 +39,14 @@ HEADERS  += mainwindow.h \
     cgra.h \
     cdixtra.h \
     cagent.h \
+    wstep.h \
     Stale.h \
     SKoordynaty.h
 
-FORMS    += mainwindow.ui
+FORMS    += \
+    mainwindow.ui \
+    help.ui \
+    wstep.ui
+
+RESOURCES += \
+    grafika.qrc

@@ -16,6 +16,16 @@ void CObiekt::Set_koordynaty(SKoordynaty_obiektu wspolrzedne)
     koordynaty=wspolrzedne;
 }
 
+Rezultat_Ruchu CObiekt::Ruch(CMapa *mapa)
+{
+    return Nic;
+}
+
+Rezultat_Ruchu CObiekt::Ruch_dla_gracza(CMapa *mapa, int sterowanie)
+{
+    return Nic;
+}
+
 bool CObiekt::czy_za_pomoca_mnie_mozna_wygrac()
 {
     return false;

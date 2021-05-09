@@ -166,8 +166,6 @@ SKoordynaty_obiektu CMapa::Znajdz_najkrotsza_do_gracza(SKoordynaty_obiektu agent
 
     dixtra.Oblicz(agenta);
 
-    //dixtra.Wyswietl_tablice();
-
     SKoordynaty_obiektu aktualne = gracza;
     SKoordynaty_obiektu poprzednika;
     poprzednika = dixtra.Get_tablica_poprzednik(aktualne);

@@ -3,10 +3,9 @@
 
 CSciana::CSciana(int x, int y):CObiekt(x,y)
 {
-
 }
 
-Rezultat_Ruchu CSciana::Ruch(CMapa* mapa, int sterowanie)
+Rezultat_Ruchu CSciana::Ruch(CMapa *mapa)
 {
     return Nic;
 }

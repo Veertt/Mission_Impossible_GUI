@@ -1,7 +1,7 @@
 #ifndef CMAPA_H
 #define CMAPA_H
+
 #include <fstream>
-#include <iostream> //niepotrzebne
 #include "cobiekt.h"
 #include "cgracz.h"
 #include "cagent.h"

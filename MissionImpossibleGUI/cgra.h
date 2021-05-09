@@ -1,8 +1,6 @@
 #ifndef CGRA_H
 #define CGRA_H
-#include <windows.h>
-#include <conio.h>
-#include <cstdlib>
+
 #include "cmapa.h"
 #include "cobiekt.h"
 #include <QWidget>
@@ -20,23 +18,20 @@ private:
     SCzy_koniec koniec;
     int poziom_trudnosci;
     CMapa map;
-    int do_sterowania;
 
-    bool Wstep();
-    void Przedstawienie_zasad_gry(int &wybor);
-
-    void Ruch_obiektow();
+    void Ruch_obiektow(int &sterowanie);
     void Ustawienie_obiektow();
 
 public:
     CGra();
-    SCzy_koniec Kolejna_klatka();
+    SCzy_koniec Kolejna_klatka(int &control);
     void Wyswietl_aktualna(QPainter &painter);
-    void Do_sterowania_dla_gracza(int &control);
-};
+    void Wczytaj_w_zaleznosci_od_poziomu(int level);
 
-//funkcja służaca do odświeżania
-void gotoxy( int x, int y );
+    int Get_poziom_trudnosci();
+    int Get_liczba_wierszy();
+    int Get_liczba_kolumn();
+};
 
 #endif // CGRA_H
 

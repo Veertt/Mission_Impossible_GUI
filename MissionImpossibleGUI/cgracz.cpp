@@ -25,7 +25,7 @@ bool CGracz::czy_mozna_we_mnie_wejsc()
     return false;
 }
 
-Rezultat_Ruchu CGracz::Ruch(CMapa *mapa, int sterowanie)
+Rezultat_Ruchu CGracz::Ruch_dla_gracza(CMapa *mapa, int sterowanie)
 {
     SKoordynaty_obiektu aktualne = Get_koordynaty();
 

@@ -1,5 +1,8 @@
 #include "cdixtra.h"
-#include <iomanip> //niepotrzebne
+#include <climits>
+#include <algorithm>
+
+using namespace std;
 
 CDixtra::CDixtra()
 {
@@ -142,31 +145,6 @@ void CDixtra::Ustawiajaca_tablice()
 SKoordynaty_obiektu CDixtra::Get_tablica_poprzednik(SKoordynaty_obiektu obecne)
 {
     return tablica[obecne.R][obecne.K].poprzednik;
-}
-
-void CDixtra::Wyswietl_tablice()
-{
-    for(int  i = 0; i<liczba_Wierszy_Mapy; i++)
-    {
-        for(int j = 0; j<liczba_Kolumn_Mapy; j++)
-        {
-            if(tablica[i][j].poprzednik.R==INT_MAX&&tablica[i][j].poprzednik.K==INT_MAX)
-            {
-                cout<<setw(4)<<"T";
-            }
-            else if(tablica[i][j].koszty==INT_MAX-1)
-            {
-                cout<<setw(3)<<"U";
-            }
-            else
-            {
-                cout<<setw(2)<<tablica[i][j].poprzednik.R<<setw(2)<<tablica[i][j].poprzednik.K;
-            }
-        }
-        cout<<endl;
-    }
-
-    cout<<endl;
 }
 
 CDixtra::~CDixtra()

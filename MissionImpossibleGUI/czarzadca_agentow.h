@@ -1,5 +1,6 @@
 #ifndef CZARZADCA_AGENTOW_H
 #define CZARZADCA_AGENTOW_H
+
 #include "SKoordynaty.h"
 
 struct SLista_Agentow
@@ -25,13 +26,11 @@ public:
     void Dodaj_kolejnego_agenta(int ktory);
     void Dodaj_ze_zobaczylem_gracza(int ktory);
     void Zmien_ze_nie_widze_gracza(int ktory);
-    void Aktualizujaca_czy_na_pewno_nadal_widze_gracza();
 
-    void Wyswietl();//niepotrzebne
+    void Aktualizujaca_czy_na_pewno_nadal_widze_gracza();
 
     void Sprawdzajaca_czy_wiemy_gdzie_jest_gracz(CMapa *mapa, int wielkosc_obszaru, SKoordynaty_obiektu aktualne, bool orientacja, bool w_ktora_strone, int ktory);
     void Ustawiajaca_do_kazdego_agenta_widocznosc(int &kl, int &kp, int &rg, int &rd, bool orientacja, bool w_ktora_strone);
-    //bool Czy_na_pewno_widze_agenta(CMapa *mapa,int rl, int rp, int kg, int kd);
 
     ~CZarzadca_Agentow();
 };
